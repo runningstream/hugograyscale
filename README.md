@@ -1,6 +1,8 @@
 # Grayscale Theme for Hugo
 This is a multi-section single page theme intended as a landing page.  This is derived from the startbootstrap-grayscale theme.
 
+Preview at https://runningstream.github.io/hugograyscale/
+
 ## Configuration
 The Hugo Grayscale theme is a one page theme designed to be the front page to your site.  Its content is populated via the front-matter in `content/_index.md`.  The page consists of, in order:
 * a navbar at top linking to the other sections, and other arbitrary links
