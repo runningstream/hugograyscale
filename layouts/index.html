@@ -23,14 +23,14 @@
             {{- range $pagesect := ( slice "about" "download" "contact" ) -}}
               {{- if isset $.Params $pagesect -}}
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger improve-contrast-box" href="#{{ $.Scratch.Get $pagesect }}">{{ $.Scratch.Get $pagesect }}</a>
+                  <a class="nav-link js-scroll-trigger improve-contrast-box" href="#{{ $.Scratch.Get $pagesect }}">{{- $.Scratch.Get $pagesect -}}</a>
                 </li>
               {{- end -}}
             {{- end -}}
             {{- if isset $.Params "menu" -}}
               {{- range $menuitem := $.Params.menu -}}
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger improve-contrast-box" href="{{ $menuitem.url | safeHTML }} ">{{ default $menuitem.url $menuitem.name | safeHTML }}</a>
+                  <a class="nav-link js-scroll-trigger improve-contrast-box" href="{{ $menuitem.url | safeHTML }}">{{- default $menuitem.url $menuitem.name | safeHTML -}}</a>
                 </li>
               {{- end -}}
             {{- end -}}
