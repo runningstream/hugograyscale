@@ -12,10 +12,10 @@
     <!-- Plugin JavaScript -->
     <script src="{{ "vendor/jquery-easing/jquery.easing.min.js" | relURL }}"></script>
 
-    {{ if isset $.Params "mapsapikey" }}
+    {{- if isset $.Params "mapsapikey" -}}
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script src="https://maps.googleapis.com/maps/api/js?key={{ $.Params.mapsapikey }}&sensor=false"></script>
-    {{ end }}
+    {{- end -}}
 
     <!-- Custom scripts for this template -->
     <script src="{{ "js/grayscale.min.js" | relURL}}"></script>
