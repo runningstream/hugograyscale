@@ -1,4 +1,4 @@
-baseURL = "http://example.com/"
+baseURL = "https://runningstream.github.io/hugograyscale/"
 languageCode = "en-us"
 title = "Hugo Grayscale Theme"
 theme = "grayscale"
