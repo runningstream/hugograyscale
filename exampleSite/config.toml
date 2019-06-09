@@ -2,7 +2,7 @@ baseURL = "http://example.com/"
 languageCode = "en-us"
 title = "Hugo Grayscale Theme"
 theme = "grayscale"
-[Params]
+[params]
     # Provide some metadata for search and indexing services
     description = "A port of the Grayscale theme to Hugo"
     author = "RunningStream"
