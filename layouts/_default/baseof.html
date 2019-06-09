@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="{{ .Site.LanguageCode }}">
-    {{- partial "head.html" . -}}
+    <head>
+        {{ partial "head.html" . }}
+    </head>
     <body id="page-top">
         {{- partial "header.html" . -}}
         {{- block "main" . }}{{- end }}
