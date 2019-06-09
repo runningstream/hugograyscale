@@ -8,7 +8,7 @@ description = "Grayscale is a multi-section single page theme intended as a land
 homepage = "https://github.com/runningstream/hugograyscale/"
 tags = ["minimal", "simple", "landing-page", "one-page"]
 features = []
-min_version = "0.41"
+min_version = "0.40.1"
 
 [author]
   name = "RunningStream"
