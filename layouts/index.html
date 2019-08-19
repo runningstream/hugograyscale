@@ -122,6 +122,22 @@
                 </a>
               </li>
               {{- end -}}
+              {{- if isset $.Params.socialhandles "facebook" -}}
+              <li class="list-inline-item">
+                <a href="https://facebook.com/{{ $.Params.socialhandles.facebook}}" class="btn btn-default btn-lg">
+                  <i class="fa fa-facebook-square fa-fw"></i>
+                  <span class="network-name">Facebook</span>
+                </a>
+              </li>
+              {{- end -}}
+              {{- if isset $.Params.socialhandles "instagram" -}}
+              <li class="list-inline-item">
+                <a href="https://instagram.com/{{ $.Params.socialhandles.instagram }}" class="btn btn-default btn-lg">
+                  <i class="fa fa-instagram fa-fw"></i>
+                  <span class="network-name">Instagram</span>
+                </a>
+              </li>
+              {{- end -}}
             </ul>
             {{- end -}}
           </div>
