@@ -1,7 +1,7 @@
 {{- define "main" -}}
-    {{- $.Scratch.Add "about" "about" -}}
-    {{- $.Scratch.Add "download" "download" -}}
-    {{- $.Scratch.Add "contact" "contact" -}}
+    {{- $.Scratch.Set "about" "about" -}}
+    {{- $.Scratch.Set "download" "download" -}}
+    {{- $.Scratch.Set "contact" "contact" -}}
     {{- range $pagesect := (slice "about" "download" "contact") -}}
         {{- if isset $.Params $pagesect -}}
           {{- $param_pagesect := index $.Params $pagesect -}}

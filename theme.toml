@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/runningstream/hugograyscale/blob/master/LICENSE"
 description = "Grayscale is a multi-section single page theme intended as a landing page."
 homepage = "https://github.com/runningstream/hugograyscale/"
-tags = ["minimal", "simple", "landing-page", "one-page"]
+tags = ["minimal", "simple", "landing-page", "one-page", "responsive"]
 features = []
 min_version = "0.40.1"
 
