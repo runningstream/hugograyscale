@@ -22,7 +22,7 @@ socialhandles:
 
 menu:
     -
-        url: "http://startbootstrap.com/template-overviews/grayscale/"
+        url: "https://startbootstrap.com/themes/grayscale/"
         name: "Original"
 
 intro:
