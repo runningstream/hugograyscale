@@ -40,8 +40,6 @@ p {
 }
 
 a {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #42DCA3;
 }
@@ -75,8 +73,6 @@ a:focus, a:hover {
 }
 
 #mainNav .navbar-nav .nav-item {
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
 }
 
@@ -95,8 +91,6 @@ a:focus, a:hover {
   #mainNav {
     padding-top: 20px;
     padding-bottom: 20px;
-    -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-    -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
     transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
     letter-spacing: 1px;
     border-bottom: none;
@@ -117,31 +111,26 @@ a:focus, a:hover {
   }
 }
 
-.masthead {
+header {
   display: table;
   width: 100%;
   height: auto;
   padding: 200px 0;
   text-align: center;
   color: white;
-  background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+  background: url("../img/section0-bg.jpg") no-repeat bottom center scroll;
   background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
-.masthead .intro-body {
+#intro-body {
   display: table-cell;
   vertical-align: middle;
 }
-
-.masthead .intro-body .brand-heading {
+header h1 {
   font-size: 50px;
 }
-
-.masthead .intro-body .intro-text {
+header p {
   font-size: 18px;
 }
 
@@ -152,14 +141,14 @@ a:focus, a:hover {
 }
 
 @media (min-width: 768px) {
-  .masthead {
+  header {
     height: 100%;
     padding: 0;
   }
-  .masthead .intro-body .brand-heading {
+  header h1 {
     font-size: 100px;
   }
-  .masthead .intro-body .intro-text {
+  header p {
     font-size: 22px;
   }
 }
@@ -170,8 +159,6 @@ a:focus, a:hover {
   height: 55px;
   margin-top: 15px;
   line-height: 45px;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
   color: white;
   border: 2px solid white;
@@ -190,13 +177,10 @@ a:focus, a:hover {
   padding-bottom: 150px;
 }
 
-.download-section {
+.section-2 {
   color: white;
-  background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
+  background: url("../img/section2-bg.jpg") no-repeat center center scroll;
   background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -218,8 +202,6 @@ a:focus, a:hover {
 .btn {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
   border-radius: 0;
@@ -240,6 +222,7 @@ a:focus, a:hover {
 
 ul.banner-social-buttons {
   margin-top: 0;
+  font-size: 0;
 }
 
 @media (max-width: 1199px) {
@@ -268,12 +251,6 @@ footer p {
   margin: 0;
 }
 
-::-moz-selection {
-  background: #fcfcfc;
-  background: rgba(255, 255, 255, 0.2);
-  text-shadow: none;
-}
-
 ::selection {
   background: #fcfcfc;
   background: rgba(255, 255, 255, 0.2);
@@ -281,9 +258,5 @@ footer p {
 }
 
 img::selection {
-  background: transparent;
-}
-
-img::-moz-selection {
   background: transparent;
 }

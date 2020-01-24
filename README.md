@@ -1,57 +1,62 @@
+# Version 2 Major Changes
+
+**Version 2 configuration is a major change from version 1.**  Sections on the main page are now configured via multiple markdown files in the content directory **instead of** via frontmatter with raw HTML in one file.
+
 # Grayscale Theme for Hugo
+
 This is a multi-section single page theme intended as a landing page.  This is derived from the startbootstrap-grayscale theme.
 
 Preview at https://runningstream.github.io/hugograyscale/
 
-## Configuration
-The Hugo Grayscale theme is a one page theme designed to be the front page to your site.  Its content is populated via the front-matter in `content/_index.md`.  The page consists of, in order:
+## Usage
+
+Drop it in your site's themes folder, then modify your site config file to specify the theme `grayscale`, or use the `-t grayscale` command line switch.
+
+## Configuration and Content
+
+The Hugo Grayscale theme is a one page theme designed to be the front page to your site.  Its content is in sections with visual breaks between each.  The content is contained in markdown files in the content folder, ordered by their `weight` parameter.  The `exampleSite` directory is a good place to start.  The page is designed to consist of, in order:
+
 * a navbar at top linking to the other sections, and other arbitrary links
 * an intro section presenting a header title and into text with background image
 * an about section presenting a header and text with black background
 * a download section presenting header and text with background image
 * a contact section presenting header and text with black background
  
-The section names show up as the links in the navbar, so you may wish to rename them if, for example, you're not using it for the purpose suggested by the default section name.
- 
-The background images are selected by filename - the intro section image must be named "intro-bg.jpg" and placed in the "static/img/" directory for your site.  Similarly, the downloads section image must be named "downloads-bg.jpg" and placed in the "static/img/" directory for your site.  See the default images in the theme's static directory for file size reference.
+These section names correspond to the `title` front matter parameter, and the files are ordered by their `weight` front matter parameter.  The section names show up as the links in the navbar.
 
-Check out the exampleSite `content/_index.md` for a full-featured example, or look below...
+The page's overall title, date, copyright and additional navbar links are specified in `content/_index.md`.
 
-```YAML
----
-title: "Hugo Grayscale Theme"
-date: 2018-09-09T00:00:00-00:00
-copyright: "Your Website"
-#mapsapikey: xxx
+Because this theme generates only one page, it does not generate an RSS feed.  The sitemap will only contain the home page.
 
-socialhandles:
-    twitter: "stream_running"
-    github: "runningstream"
-#    googplus: "goog_addr_here"
+The background images are selected by filename and placed in the "static/img/" directory for your site.
 
-menu:
-    -
-        url: "http://startbootstrap.com/template-overviews/grayscale/"
-        name: "Original"
+* The intro section, section 0, must have its image at `static/img/section0-bg.jpg`
+* The download section, section 2, must have its image at `static/img/section2-bg.jpg`
 
-intro:
-    header: "Grayscale"
-    text: "A free, responsive, one page Hugo/Bootstrap theme originally created by Start Bootstrap."
+These filenames are configured in `grayscale.css`.
 
-about:
-    header: "About Grayscale"
-    text: '<p>Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p> <p>This theme was also adapted from a Jekyll version, brought to you by <a href="https://github.com/jeromelachaud">Jerome Lachaud</a></p> <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p> <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with SASS and LESS files for easy customization!</p>'
+Image aspect ratios used by the theme's default images are:
 
-download:
-    rename: "Links"
-    header: "Download Grayscale"
-    text: '<p>You can download Grayscale for free on the preview page at Start Bootstrap.</p><a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>'
+* 1.33333 for `section0-bg.jpg` - 1500x1125, for example
+* 4.625 for `section2-bg.jpg` - 1500x324, for example
 
-contact:
-    header: "Contact Start Bootstrap"
-    text: '<p>Feel free to leave us a comment on the <a href="http://startbootstrap.com/template-overviews/grayscale/">Grayscale template overview page</a> on Start Bootstrap to give some feedback about this theme!</p>'
----
+### Shortcodes
+
+Shortcodes exist to support the "big buttons", including the demo site's download page button and social network buttons.
+
+Big button shortcode example:
+
+```
+{{< big-button text="Visit Download Page" href="https://github.com/runningstream/hugograyscale/" >}}
 ```
 
-## Usage
-Drop it in your site's themes folder, then modify your site config file to specify the theme `grayscale`, or use the `-t grayscale` command line switch.
+Social network shortcode example:
+
+```
+{{% socialhandles %}}
+    {{< twitter user="stream_running" >}}
+    {{< github user="runningstream" >}}
+{{% /socialhandles %}}
+```
+
+Check out the directory `exampleSite/content/` for a full-featured example.
