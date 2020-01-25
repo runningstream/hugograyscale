@@ -1,0 +1,6 @@
+---
+install:
+  - snap install hugo
+
+script:
+  - make docs
