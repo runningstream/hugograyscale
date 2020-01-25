@@ -1,4 +1,4 @@
----
+language: generic
 install:
   - sudo snap install hugo
 
@@ -8,7 +8,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_DEPLOY_TOKEN
+  github_token: $GITHUB_TOKEN
   keep_history: true
   local_dir: docs
   on:
