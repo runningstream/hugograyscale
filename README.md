@@ -53,10 +53,10 @@ Big button shortcode example:
 Social network shortcode example:
 
 ```
-{{% socialhandles %}}
+{{< socialhandles >}}
     {{< twitter user="stream_running" >}}
     {{< github user="runningstream" >}}
-{{% /socialhandles %}}
+{{< /socialhandles >}}
 ```
 
 Check out the directory `exampleSite/content/` for a full-featured example.
