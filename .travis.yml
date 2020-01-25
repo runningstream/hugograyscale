@@ -4,12 +4,12 @@ install:
 
 script:
   - make docs
-  - mv docs/* ./
 
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token: $GITHUB_DEPLOY_TOKEN
   keep_history: true
+  local_dir: docs
   on:
-    branch: gh-pages
+    branch: travis_test
