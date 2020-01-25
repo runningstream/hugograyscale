@@ -1,6 +1,6 @@
 ---
 install:
-  - snap install hugo
+  - sudo snap install hugo
 
 script:
   - make docs
