@@ -14,7 +14,9 @@ Drop it in your site's themes folder, then modify your site config file to speci
 
 ## Configuration and Content
 
-The Hugo Grayscale theme is a one page theme designed to be the front page to your site.  Its content is in sections with visual breaks between each.  The content is contained in markdown files in the content folder, ordered by their `weight` parameter.  The `exampleSite` directory is a good place to start.  The page is designed to consist of, in order:
+### Description
+
+The Hugo Grayscale theme is a one page theme designed to be the front page to your site.  Its content is in sections with visual breaks between each.  The content is contained in markdown files in the `content/sections` directory, ordered by their `weight` parameter.  The `exampleSite` directory is a good place to start.  The page is designed to consist of, in order:
 
 * a navbar at top linking to the other sections, and other arbitrary links
 * an intro section presenting a header title and into text with background image
@@ -24,9 +26,76 @@ The Hugo Grayscale theme is a one page theme designed to be the front page to yo
  
 These section names correspond to the `title` front matter parameter, and the files are ordered by their `weight` front matter parameter.  The section names show up as the links in the navbar.
 
-The page's overall title, date, copyright and additional navbar links are specified in `content/_index.md`.
+Because this theme generates only one page, the RSS feed contains no items.  The sitemap will only contain the home page.
 
-Because this theme generates only one page, it does not generate an RSS feed.  The sitemap will only contain the home page.
+### Site Configuration
+
+Site configuration can include an author and social section, like the following:
+
+```
+[Author]
+    name = "Site Creator Name"
+    email = "Site Creator Email"
+[Social]
+    twitter = "site_twitter_handle"
+```
+
+These settings will enable proper display in the meta tags.
+
+### Content Directory Layout
+
+```
+.
+...
+├── content
+|   ├── _index.md
+|   └── sections
+|       ├── index.md
+|       ├── section_data_1.md
+|       ├── section_data_2.md
+|       ├── section_data_3.md
+...
+```
+
+`content/_index.md` specifies front matter for the page.  `content/sections/` contains all the sections that are displayed on the page. `content/sections/index.md` should contain front matter specifying that the directory is `headless`.  Other `content/sections/*.md` files can be named anything, and comprise the section content.
+
+### Front Matter
+
+The page's overall title, date, copyright and additional navbar links are specified in `content/_index.md`.  Like so:
+
+```
+---
+title: "Hugo Grayscale Theme"
+date: 2018-09-09T00:00:00-00:00
+copyright: "Your Website"
+description: "A port of the Grayscale theme to Hugo"
+
+menu:
+    - {url: "https://startbootstrap.com/themes/grayscale/", name: "Original"}
+---
+```
+
+The `content/sections/index.md` front matter should specify that the directory is headless.  Note that the filename has no underscore this time...
+
+```
+---
+headless: true
+---
+```
+
+Section frontmatter (files like `content/sections/*.md` other than `index.md`) should specify a `title` and `weight`, and can specify `improvecontrast`.
+
+```
+---
+title: "About"
+weight: 2
+improvecontrast: true
+---
+```
+
+The `title` property is used for link text, and `weight` determines section ordering.  Specifying `improvecontrast: true` places a contrast-improving transparent box behind your text.  This is most appropriate on even-numbered sections because they have background images.
+
+### Images
 
 The background images are selected by filename and placed in the "static/img/" directory for your site.
 
